@@ -1,0 +1,18 @@
+/* Popover */
+.ant-popover-inner-content {
+  @apply p-0;
+}
+.ant-popover-arrow {
+  @apply hidden;
+}
+.ant-popover-inner {
+  @apply overflow-hidden rounded-[var(--popover-border-radius)];
+}
+
+/* Spin */
+.ant-spin {
+  @apply text-[color:inherit];
+}
+.anticon-spin {
+  @apply text-[length:inherit];
+}

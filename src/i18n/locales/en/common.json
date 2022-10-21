@@ -1,0 +1,53 @@
+{
+  "messages": {
+    "copied": "\"{{text}}\" has been copied to clipboard."
+  },
+  "enums": {
+    "walletMainNet": {
+      "OneGate": "MainNet",
+      "NeoLine": "N3 MainNet",
+      "O3": "N3 MainNet",
+      "Neon": "3.x MainNet"
+    },
+    "walletTestNet": {
+      "OneGate": "TestNet",
+      "NeoLine": "N3 TestNet",
+      "O3": "N3 TestNet",
+      "Neon": "3.x TestNet"
+    }
+  },
+  "errors": {
+    "WalletError": {
+      "UnknownError": "Unknown wallet error.",
+      "NotInstalled": "Wallet is not installed.",
+      "NotConnected": "Wallet is not connected.",
+      "IncorrectNetwork": "Please switch to {{walletNetwork}} on {{walletName}} wallet.",
+      "UserRejected": "Request is rejected by user.",
+      "MalformedInput": "Malformed input.",
+      "InsufficientFunds": "Insufficient funds.",
+      "CommunicateFailed": "Communicate failed with wallet.",
+      "RemoteRpcError": "Communicate failed with wallet server.",
+      "VerionNotCompatible": "Wallet version is not compatible, please upgrade to the latest version.",
+      "NoAccount": "No account.",
+      "UnsupportedNetwork": "Unsupported network."
+    },
+    "BackendError": {
+      "UnknownError": "Unknown request error.",
+      "NetworkError": "Network error.",
+      "InternalServiceError": "Internal server error.",
+      "NotFound": "Not found."
+    }
+  },
+  "validations": {
+    "bigNumber": {
+      "min": "{{path}} must be greater than or equal to {{min}}",
+      "max": "{{path}} must be less than or equal to {{max}}",
+      "lessThan": "{{path}} must be less than {{less}}",
+      "moreThan": "{{path}} must be greater than {{more}}",
+      "positive": "{{path}} must be a positive number.",
+      "negative": "{{path}} must be a negative number.",
+      "maxDecimals": "{{path}} must have at most {{maxDecimals}} decimal places.",
+      "integer": "{{path}} must be an integer."
+    }
+  }
+}
