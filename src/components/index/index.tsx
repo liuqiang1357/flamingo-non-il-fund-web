@@ -10,7 +10,7 @@ import {
 import { useConnectedWalletState } from 'store/slices/walletStates';
 
 export const Index: FC = () => {
-  const [scriptHash, setScriptHash] = useState('');
+  const [scriptHash, setScriptHash] = useState('0x7b8afe03e8133c646552a8e205c6b77a6c338f17');
 
   const walletState = useConnectedWalletState();
 
