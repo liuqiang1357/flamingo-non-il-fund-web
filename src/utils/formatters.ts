@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js';
 import i18n from 'i18next';
 
 export interface FormatEnumOptions {
@@ -42,4 +43,44 @@ export function formatLongText(
     return value;
   }
   return `${value.slice(0, finalHeadLength)}...${value.slice(value.length - finalTailLength)}`;
+}
+
+export interface FormatNumberOptions {
+  decimals?: number | string;
+  roundingMode?: BigNumber.RoundingMode;
+  prefix?: string;
+  suffix?: string;
+  asPercentage?: boolean;
+  withSign?: boolean;
+}
+
+export function formatNumber(
+  value: number | string | undefined,
+  {
+    decimals,
+    roundingMode,
+    prefix,
+    suffix,
+    asPercentage = false,
+    withSign = false,
+  }: FormatNumberOptions = {},
+): string {
+  if (value == undefined) {
+    return '-';
+  }
+  const bn = new BigNumber(value).times(asPercentage ? 100 : 1);
+  if (bn.isNaN()) {
+    return '-';
+  }
+  const options = {
+    prefix: (prefix ?? '') + (withSign && bn.gte(0) ? '+' : ''),
+    decimalSeparator: '.',
+    groupSeparator: ',',
+    groupSize: 3,
+    suffix: (asPercentage ? '%' : '') + (suffix ?? ''),
+  };
+  if (decimals != undefined) {
+    return bn.dp(Number(decimals), roundingMode).toFormat(options);
+  }
+  return bn.toFormat(options);
 }

@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { invokeApi } from './apis/invoke';
+import { invokeReadApi } from './apis/invokeRead';
 import { nodeApi } from './apis/node';
 import { errorsSlice } from './slices/errors';
 import { uiStateSlice } from './slices/uiState';
@@ -12,11 +13,12 @@ export const store = configureStore({
     [uiStateSlice.name]: uiStateSlice.reducer,
     [nodeApi.reducerPath]: nodeApi.reducer,
     [invokeApi.reducerPath]: invokeApi.reducer,
+    [invokeReadApi.reducerPath]: invokeReadApi.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(nodeApi.middleware, invokeApi.middleware),
+    }).concat(nodeApi.middleware, invokeApi.middleware, invokeReadApi.middleware),
 });
 
 export type Store = typeof store;
