@@ -11,8 +11,8 @@ export const invokeApi = createApi({
         scriptHash,
         operation: 'addLiquidityAndStake',
         signers: [
-          { account: scriptHash, scopes: 'Global' },
           { account: addressToScriptHash(address), scopes: 'Global' },
+          { account: scriptHash, scopes: 'Global' },
         ],
         waitConfirmed: true,
       }),
@@ -23,8 +23,8 @@ export const invokeApi = createApi({
         scriptHash,
         operation: 'refundAndRemoveLiquidity',
         signers: [
-          { account: scriptHash, scopes: 'Global' },
           { account: addressToScriptHash(address), scopes: 'Global' },
+          { account: scriptHash, scopes: 'Global' },
         ],
         waitConfirmed: true,
       }),
